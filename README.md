@@ -12,7 +12,7 @@ personal learning process in the future.
 
 To run the Go programs in this repository, you need to have Go installed on your machine. If you haven't installed it yet, you can download it from the [official Go website](https://golang.org/dl/).
 
-Once you have Go installed, you can clone this repository to your local machine.
+Once you have Go installed, you can clone this repository to your local machine if you want to try it for yourself.
 
 ```bash
 git clone https://github.com/nicl-dev/go-self-learning.git
