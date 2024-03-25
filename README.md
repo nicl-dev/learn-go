@@ -1,6 +1,6 @@
 # Go Self-Learning Repository
 
-This repository is dedicated to my self-learning journey in Go programming language.
+This repository is dedicated to my self-learning journey in the Go programming language.
 
 ## About
 
