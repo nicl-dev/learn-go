@@ -4,7 +4,7 @@ This repository is dedicated to my self-learning journey in the Go programming l
 
 ## About
 
-This repository contains various Go programs, exercises, and projects that I will work on as part of my learning process. The main purpose of this repository is to document my progress and to serve as a reference for future use. As such, it is subject to change and can
+This repository contains various Go programs, exercises, and projects that I will work on as part of my journey of learning go. The main purpose of this repository is to document my progress and to serve as a reference for future use. As such, it is subject to change and can
 and will grow or shrink depending on how relevant the information in this repository is to my
 personal learning process in the future.
 
