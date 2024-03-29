@@ -20,7 +20,7 @@ func main() {
 	profit := revenue*(1-taxRate/100) - expenses
 	ratio := ebt / profit
 
-	fmt.Printf("Your earnings before taxes are: $%v \n", ebt)
-	fmt.Printf("Your profit after taxes is: $%v \n", profit)
-	fmt.Printf("Your ebt to profit ratio is: %v%% \n", ratio)
+	fmt.Printf("Your earnings before taxes are: $%v\n", ebt)
+	fmt.Printf("Your profit after taxes is: $%v\n", profit)
+	fmt.Printf("Your ebt to profit ratio is: %v\n", ratio)
 }
