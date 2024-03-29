@@ -1,13 +1,11 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 	var revenue float64
 	var expenses float64
-	var tax_rate float64
+	var taxRate float64
 
 	fmt.Print("Enter your revenue in dollars: ")
 	fmt.Scan(&revenue)
@@ -16,11 +14,11 @@ func main() {
 	fmt.Scan(&expenses)
 
 	fmt.Print("Enter your tax rate: ")
-	fmt.Scan(&tax_rate)
+	fmt.Scan(&taxRate)
 
-	var ebt = revenue - expenses
-	var profit = ebt * (1 - tax_rate/100)
-	var ratio = ebt / profit
+	ebt := revenue - expenses
+	profit := ebt * (1 - taxRate/100)
+	ratio := ebt / profit
 
 	fmt.Printf("Your earnings before taxes are: $%v \n", ebt)
 	fmt.Printf("Your profit after taxes is: $%v \n", profit)
