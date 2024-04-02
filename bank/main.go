@@ -9,6 +9,7 @@ func main() {
 	fmt.Println("Welcome to the Bank!")
 
 	for {
+		// Display the menu
 		fmt.Println("Please select an option:")
 		fmt.Println("1. Check balance")
 		fmt.Println("2. Deposit money")
@@ -17,6 +18,7 @@ func main() {
 		fmt.Print("Enter your choice: ")
 		fmt.Scan(&choice)
 
+		// Perform the selected action
 		switch choice {
 		case 1:
 			fmt.Println("Your balance is:", accountBalance)
