@@ -11,7 +11,6 @@ const accountBalanceFile = "balance.txt"
 
 func main() {
 	var accountBalance, err = getBalanceFromFile()
-	var choice int
 
 	if err != nil {
 		fmt.Println("ERROR")
@@ -22,6 +21,8 @@ func main() {
 	fmt.Println("Welcome to the Bank!")
 
 	for {
+		var choice int
+
 		// Display the menu
 		fmt.Println("Please select an option:")
 		fmt.Println("1. Check balance")
