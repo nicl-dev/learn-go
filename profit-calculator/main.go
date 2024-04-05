@@ -11,7 +11,7 @@ func main() {
 	taxRate := getUserInput("Enter your tax rate: ")
 
 	ebt, profit, ratio := calculateAll(revenue, expenses, taxRate)
-	writeToFile(ebt, profit, ratio)
+	storeResults(ebt, profit, ratio)
 
 	fmt.Printf("Your earnings before taxes are: $%.2f\n", ebt)
 	fmt.Printf("Your profit after taxes is: $%.2f\n", profit)
@@ -39,7 +39,7 @@ func calculateAll(revenue, expenses, taxRate float64) (ebt, profit, ratio float6
 	return ebt, profit, ratio
 }
 
-func writeToFile(ebt, profit, ratio float64) {
+func storeResults(ebt, profit, ratio float64) {
 	text := fmt.Sprintf("EBT: %.2f\nProfit: %.2f\nRatio: %.2f", ebt, profit, ratio)
 	os.WriteFile("profit.txt", []byte(text), 0644)
 }
