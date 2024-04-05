@@ -1,52 +1,34 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 	"os"
 )
 
 func main() {
-	revenue, err := getUserInput("Enter your revenue in dollars: ")
-
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	expenses, err := getUserInput("Enter your expenses in dollars: ")
-
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	taxRate, err := getUserInput("Enter your tax rate: ")
-
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	revenue := getUserInput("Enter your revenue in dollars: ")
+	expenses := getUserInput("Enter your expenses in dollars: ")
+	taxRate := getUserInput("Enter your tax rate: ")
 
 	ebt, profit, ratio := calculateAll(revenue, expenses, taxRate)
 	writeToFile(ebt, profit, ratio)
 
-	fmt.Printf("Your earnings before taxes are: $%.3v\n", ebt)
-	fmt.Printf("Your profit after taxes is: $%.3v\n", profit)
-	fmt.Printf("Your ebt to profit ratio is: %.3v\n", ratio)
+	fmt.Printf("Your earnings before taxes are: $%.2f\n", ebt)
+	fmt.Printf("Your profit after taxes is: $%.2f\n", profit)
+	fmt.Printf("Your ebt to profit ratio is: %.2f\n", ratio)
 }
 
-func getUserInput(infoText string) (float64, error) {
+func getUserInput(infoText string) float64 {
 	var userInput float64
 
 	fmt.Print(infoText)
 	fmt.Scan(&userInput)
 
 	if userInput <= 0 {
-		return 0, errors.New("only positive numbers allowed")
+		panic("only positive numbers allowed")
 	}
 
-	return userInput, nil
+	return userInput
 }
 
 func calculateAll(revenue, expenses, taxRate float64) (ebt, profit, ratio float64) {
@@ -58,6 +40,6 @@ func calculateAll(revenue, expenses, taxRate float64) (ebt, profit, ratio float6
 }
 
 func writeToFile(ebt, profit, ratio float64) {
-	text := fmt.Sprint(ebt, profit, ratio)
+	text := fmt.Sprintf("EBT: %.2f\nProfit: %.2f\nRatio: %.2f", ebt, profit, ratio)
 	os.WriteFile("profit.txt", []byte(text), 0644)
 }
