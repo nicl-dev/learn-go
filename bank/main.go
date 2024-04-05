@@ -21,14 +21,9 @@ func main() {
 	fmt.Println("Welcome to the Bank!")
 
 	for {
-		var choice int
+		presentOptions()
 
-		// Display the menu
-		fmt.Println("Please select an option:")
-		fmt.Println("1. Check balance")
-		fmt.Println("2. Deposit money")
-		fmt.Println("3. Withdraw money")
-		fmt.Println("4. Exit")
+		var choice int
 		fmt.Print("Enter your choice: ")
 		fmt.Scan(&choice)
 
