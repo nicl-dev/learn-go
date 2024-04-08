@@ -1,3 +1,3 @@
-module github.com/nicl-dev/learn-go/bank
+module example.com/bank
 
 go 1.22.1
