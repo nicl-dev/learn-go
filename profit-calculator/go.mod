@@ -1,3 +1,3 @@
-module github.com/nicl-dev/learn-go/profit-calculator
+module example.com/profit-calculator
 
 go 1.22.1
