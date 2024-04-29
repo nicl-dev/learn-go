@@ -1,6 +1,6 @@
-# Go Self-Learning Repository
+# Golang study Repository
 
-This repository is dedicated to my self-learning journey in the Go programming language.
+I am using this repository to study the Go programming language.
 
 ## About
 
