@@ -18,6 +18,12 @@ func (u user) outputUserDetails() {
 	fmt.Println(u.firstName, u.lastName, u.birthdate)
 }
 
+// we need the *user pointer here so the original user struct gets mutated and not a copy of it.
+func (u *user) clearUserName() {
+	u.firstName = ""
+	u.lastName = ""
+}
+
 func main() {
 
 	userFirstName := getUserData("Please enter your first name: ")
@@ -33,6 +39,8 @@ func main() {
 
 	// ... do something awesome with that gathered data!
 
+	appUser.outputUserDetails()
+	appUser.clearUserName()
 	appUser.outputUserDetails()
 }
 
