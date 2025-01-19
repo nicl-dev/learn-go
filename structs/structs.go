@@ -18,8 +18,8 @@ func (u user) outputUserDetails() {
 	fmt.Println(u.firstName, u.lastName, u.birthdate)
 }
 
-func newUser(firstName, lastName, birthdate string) user {
-	return user{
+func newUser(firstName, lastName, birthdate string) *user {
+	return &user{
 		firstName: firstName,
 		lastName:  lastName,
 		birthdate: birthdate,
