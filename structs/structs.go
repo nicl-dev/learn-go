@@ -37,11 +37,12 @@ func newUser(firstName, lastName, birthdate string) (*user, error) {
 		createdAt: time.Now(),
 	}, nil
 }
+
 func main() {
 
-	userFirstName := getUserData("Please enter your first name: ")
-	userLastName := getUserData("Please enter your last name: ")
-	userBirthdate := getUserData("Please enter your birthdate (MM/DD/YYYY): ")
+	userFirstName, _ := getUserData("Please enter your first name: ")
+	userLastName, _ := getUserData("Please enter your last name: ")
+	userBirthdate, _ := getUserData("Please enter your birthdate (MM/DD/YYYY): ")
 
 	appUser, err := newUser(userFirstName, userLastName, userBirthdate)
 
@@ -56,9 +57,12 @@ func main() {
 	appUser.outputUserDetails()
 }
 
-func getUserData(promptText string) string {
+func getUserData(promptText string) (string, error) {
 	fmt.Print(promptText)
 	var value string
-	fmt.Scanln(&value)
-	return value
+	_, err := fmt.Scanln(&value)
+	if err != nil {
+		return "", err
+	}
+	return value, nil
 }
