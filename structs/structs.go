@@ -19,6 +19,12 @@ func (u user) outputUserDetails() {
 	fmt.Println(u.firstName, u.lastName, u.birthdate)
 }
 
+// we need the *user pointer here so the original user struct gets mutated and not a copy of it.
+func (u *user) clearUserName() {
+	u.firstName = ""
+	u.lastName = ""
+}
+
 func newUser(firstName, lastName, birthdate string) (*user, error) {
 	if firstName == "" || lastName == "" || birthdate == "" {
 		return nil, errors.New("First name, last name and birthdate are required.")
@@ -31,13 +37,6 @@ func newUser(firstName, lastName, birthdate string) (*user, error) {
 		createdAt: time.Now(),
 	}, nil
 }
-
-// we need the *user pointer here so the original user struct gets mutated and not a copy of it.
-func (u *user) clearUserName() {
-	u.firstName = ""
-	u.lastName = ""
-}
-
 func main() {
 
 	userFirstName := getUserData("Please enter your first name: ")
