@@ -14,7 +14,7 @@ type User struct {
 	createdAt time.Time
 }
 
-func (u User) OutputUserDetails() {
+func (u *User) OutputUserDetails() {
 	//...
 	fmt.Println(u.firstName, u.lastName, u.birthdate)
 }
