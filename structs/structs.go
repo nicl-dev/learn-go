@@ -9,8 +9,20 @@ import (
 func main() {
 
 	userFirstName, err := getUserData("Please enter your first name: ")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	userLastName, err := getUserData("Please enter your last name: ")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	userBirthdate, err := getUserData("Please enter your birthdate (MM/DD/YYYY): ")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
 	appUser, err := user.NewUser(userFirstName, userLastName, userBirthdate)
 
