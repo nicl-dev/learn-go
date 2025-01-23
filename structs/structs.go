@@ -23,6 +23,16 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	adminEmail, err := getUserData("Please enter your email: ")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	adminPassword, err := getUserData("Please enter a password: ")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
 	appUser, err := user.New(userFirstName, userLastName, userBirthdate)
 
@@ -30,11 +40,22 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	// ... do something awesome with that gathered data!
 
+	// test outputs for a user
 	appUser.OutputUserDetails()
 	appUser.ClearUserName()
 	appUser.OutputUserDetails()
+
+	// additional test outputs for embedded struct Admin
+	appAdmin, err := user.NewAdmin(adminEmail, adminPassword)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	appAdmin.OutputUserDetails()
+	appAdmin.ClearUserName()
+	appAdmin.OutputUserDetails()
 }
 
 func getUserData(promptText string) (string, error) {
