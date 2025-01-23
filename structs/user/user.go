@@ -21,7 +21,6 @@ type Admin struct {
 }
 
 func (u *User) OutputUserDetails() {
-	//...
 	fmt.Println(u.firstName, u.lastName, u.birthdate)
 }
 
