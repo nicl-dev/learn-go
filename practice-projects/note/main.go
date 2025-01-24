@@ -9,22 +9,20 @@ func main() {
 	getNoteData()
 }
 
-func getNoteData() (string, error) {
+func getNoteData() (string, string, error) {
 	title, err := getUserInput("Enter a title:")
 	if err != nil {
 		fmt.Println(err)
-		return "", err
+		return "", "", err
 	}
 
 	content, err := getUserInput("Enter the content:")
 	if err != nil {
 		fmt.Println(err)
-		return "", err
+		return title, "", err
 	}
 
-	note := title + content
-
-	return note, nil
+	return title, content, nil
 }
 
 func getUserInput(prompt string) (string, error) {
