@@ -19,7 +19,7 @@ func getNoteData() (string, string, error) {
 	content, err := getUserInput("Enter the content:")
 	if err != nil {
 		fmt.Println(err)
-		return title, "", err
+		return "", "", err
 	}
 
 	return title, content, nil
