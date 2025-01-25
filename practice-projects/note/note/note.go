@@ -21,7 +21,7 @@ func (n Note) Display() {
 
 func (n Note) Save() error {
 	fileName := strings.ReplaceAll(n.title, " ", "_")
-	fileName = strings.ToLower(fileName + ".json")
+	fileName = strings.ToLower(fileName) + ".json"
 
 	json, err := json.Marshal(n)
 	if err != nil {
