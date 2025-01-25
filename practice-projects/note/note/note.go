@@ -2,6 +2,7 @@ package note
 
 import (
 	"errors"
+	"fmt"
 	"time"
 )
 
@@ -9,6 +10,10 @@ type Note struct {
 	title     string
 	content   string
 	createdAt time.Time
+}
+
+func (n Note) Display() {
+	fmt.Printf("%v\n\n%v", n.title, n.content)
 }
 
 func New(noteTitle, noteContent string) (Note, error) {
