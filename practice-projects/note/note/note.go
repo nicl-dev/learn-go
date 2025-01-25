@@ -3,6 +3,8 @@ package note
 import (
 	"errors"
 	"fmt"
+	"os"
+	"strings"
 	"time"
 )
 
@@ -14,6 +16,16 @@ type Note struct {
 
 func (n Note) Display() {
 	fmt.Printf("%v\n\n%v", n.title, n.content)
+}
+
+func (n Note) Save() {
+	fileName := strings.ReplaceAll(n.title, " ", "_")
+	fileName = strings.ToLower(fileName)
+	err := os.WriteFile(fmt.Sprintf("testdata/%s", fileName), []byte(n.title+"\n"+n.content), 0666)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 }
 
 func New(noteTitle, noteContent string) (Note, error) {

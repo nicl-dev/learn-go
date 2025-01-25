@@ -19,6 +19,7 @@ func main() {
 	}
 
 	userNote.Display()
+	userNote.Save()
 }
 
 func getNoteData() (string, string) {
