@@ -6,19 +6,25 @@ import (
 )
 
 func main() {
-	getNoteData()
+	title, content, err := getNoteData()
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Println(title)
+	fmt.Println(content)
 }
 
 func getNoteData() (string, string, error) {
 	title, err := getUserInput("Enter a title:")
 	if err != nil {
-		fmt.Println(err)
 		return "", "", err
 	}
 
 	content, err := getUserInput("Enter the content:")
 	if err != nil {
-		fmt.Println(err)
 		return "", "", err
 	}
 
