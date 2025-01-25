@@ -21,14 +21,14 @@ func (n Note) Display() {
 
 func (n Note) Save() error {
 	fileName := strings.ReplaceAll(n.title, " ", "_")
-	fileName = strings.ToLower(fileName)
+	fileName = strings.ToLower(fileName + ".json")
 
 	json, err := json.Marshal(n)
 	if err != nil {
 		return err
 	}
 
-	err = os.WriteFile(fmt.Sprintf("testdata/%s.json", fileName), json, 0644)
+	err = os.WriteFile(fmt.Sprintf("testdata/%s", fileName), json, 0644)
 	if err != nil {
 		return err
 	}
