@@ -10,17 +10,17 @@ import (
 )
 
 type Note struct {
-	title     string
-	content   string
-	createdAt time.Time
+	Title     string
+	Content   string
+	CreatedAt time.Time
 }
 
 func (n Note) Display() {
-	fmt.Printf("%v\n\n%v\n", n.title, n.content)
+	fmt.Printf("%v\n\n%v\n", n.Title, n.Content)
 }
 
 func (n Note) Save() error {
-	fileName := strings.ReplaceAll(n.title, " ", "_")
+	fileName := strings.ReplaceAll(n.Title, " ", "_")
 	fileName = strings.ToLower(fileName) + ".json"
 
 	json, err := json.Marshal(n)
@@ -28,7 +28,7 @@ func (n Note) Save() error {
 		return err
 	}
 
-	err = os.WriteFile(fmt.Sprintf("testdata/%s", fileName), json, 0644)
+	err = os.WriteFile(fileName, json, 0644)
 	if err != nil {
 		return err
 	}
@@ -41,8 +41,8 @@ func New(noteTitle, noteContent string) (Note, error) {
 	}
 
 	return Note{
-		title:     noteTitle,
-		content:   noteContent,
-		createdAt: time.Now(),
+		Title:     noteTitle,
+		Content:   noteContent,
+		CreatedAt: time.Now(),
 	}, nil
 }
