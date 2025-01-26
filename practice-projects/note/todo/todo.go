@@ -12,7 +12,7 @@ type Todo struct {
 }
 
 func (t Todo) Display() {
-	fmt.Println(t)
+	fmt.Println(t.Text)
 }
 
 func (t Todo) Save() error {
