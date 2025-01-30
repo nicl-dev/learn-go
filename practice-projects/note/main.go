@@ -34,7 +34,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println("Saving the todo succeeded!")
+	printSomething("Saving the todo succeeded!")
 
 	userNote, err := note.New(title, content)
 	if err != nil {
@@ -44,10 +44,21 @@ func main() {
 
 	err = outputData(userNote)
 	if err != nil {
-		fmt.Println(err)
+		printSomething(err)
 		return
 	}
-	fmt.Println("Saving the note succeeded!")
+	printSomething("Saving the note succeeded!")
+}
+
+func printSomething(value interface{}) {
+	switch value.(type) {
+	case int:
+		fmt.Println("Integer:", value)
+	case float64:
+		fmt.Println("Float64:", value)
+	case string:
+		fmt.Println(value)
+	}
 }
 
 func outputData(data outputtable) error {
