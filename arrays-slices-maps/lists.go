@@ -17,4 +17,9 @@ func main() {
 	highlitedPrices := featuredPrices[:1]
 	fmt.Println(featuredPrices)
 	fmt.Println(highlitedPrices)
+	fmt.Println(len(highlitedPrices), cap(highlitedPrices))
+
+	highlitedPrices = highlitedPrices[:3]
+	fmt.Println(highlitedPrices)
+	fmt.Println(len(highlitedPrices), cap(highlitedPrices))
 }
