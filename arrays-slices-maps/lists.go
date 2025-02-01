@@ -8,8 +8,8 @@ func main() {
 	fmt.Println(prices[0:1])
 	prices[1] = 9.99
 
-	prices = append(prices, 14.99)
-	fmt.Println(prices)
+	updatedPrices := append(prices, 14.99)
+	fmt.Println(updatedPrices, prices)
 }
 
 // below: function to test creating and modifying arrays
