@@ -31,6 +31,32 @@ func main() {
 	goals[1] = "improve my go skills"
 	goals = append(goals, "create a nice app")
 	fmt.Println(goals)
+
+	type Product struct {
+		title string
+		id    int
+		price float64
+	}
+
+	productList := []Product{
+		{
+			title: "apple",
+			id:    0,
+			price: 0.99,
+		},
+		{
+			title: "banana",
+			id:    1,
+			price: 1.99,
+		},
+	}
+	fmt.Println(productList)
+	productList = append(productList, Product{
+		title: "cherry",
+		id:    2,
+		price: 0.10,
+	})
+	fmt.Println(productList)
 }
 
 // Time to practice what you learned!
