@@ -12,11 +12,10 @@ func main() {
 	fmt.Println(hobbies[1:3])
 
 	// Task 3)
-	sliceOne := []string{}
-	sliceOne = hobbies[0:2]
+	sliceOne := hobbies[0:2]
 	fmt.Println(sliceOne)
 
-	sliceTwo := hobbies[0:2]
+	sliceTwo := hobbies[:2]
 	fmt.Println(sliceTwo)
 
 	// Task 4)
