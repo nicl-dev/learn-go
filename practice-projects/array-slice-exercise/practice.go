@@ -31,6 +31,7 @@ func main() {
 	goals = append(goals, "create a nice app")
 	fmt.Println(goals)
 
+	// Task 7))
 	type Product struct {
 		title string
 		id    int
