@@ -10,6 +10,11 @@ func main() {
 
 	updatedPrices := append(prices, 14.99)
 	fmt.Println(updatedPrices, prices)
+
+	discountPrices := []float64{14.99, 199.99, 49.99}
+	allPrices := append(prices, discountPrices...)
+
+	fmt.Println(allPrices)
 }
 
 // below: function to test creating and modifying arrays
