@@ -27,4 +27,10 @@ func main() {
 	courseRatings["vue"] = 4.9
 
 	courseRatings.output()
+
+	// fmt.Println(courseRatings)
+
+	for index, value := range userNames {
+		fmt.Println(index, value)
+	}
 }
