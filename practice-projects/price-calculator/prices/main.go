@@ -54,10 +54,12 @@ func (job *TaxIncludedPriceJob) LoadData() {
 
 	if err != nil {
 		fmt.Println(err)
+		file.Close()
 		return
 	}
 
 	job.InputPrices = prices
+	file.Close()
 }
 
 func NewTaxIncludedPriceJob(taxRate float64) *TaxIncludedPriceJob {
