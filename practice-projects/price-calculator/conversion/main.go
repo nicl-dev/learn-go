@@ -6,7 +6,7 @@ import (
 )
 
 func StringsToFloat(strings []string) ([]float64, error) {
-	var floats []float64 = make([]float64, len(strings))
+	var floats []float64
 	for _, string := range strings {
 		price, err := strconv.ParseFloat(string, 64)
 
