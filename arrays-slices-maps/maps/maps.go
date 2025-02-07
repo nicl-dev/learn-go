@@ -2,7 +2,7 @@ package maps
 
 import "fmt"
 
-func main() {
+func Maps() {
 	websites := map[string]string{
 		"Google":              "https://google.com",
 		"Amazon Web Services": "https://aws.com",
