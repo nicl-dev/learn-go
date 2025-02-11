@@ -1,0 +1,3 @@
+package filemanager
+
+func ReadLines() {}
