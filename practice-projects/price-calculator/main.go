@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"example.com/price-calculator/prices"
 )
 
@@ -9,6 +11,12 @@ func main() {
 
 	for _, taxRate := range taxRates {
 		priceJob := prices.NewTaxIncludedPriceJob(taxRate)
-		priceJob.Process()
+		err := priceJob.Process()
+
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
 	}
 }
