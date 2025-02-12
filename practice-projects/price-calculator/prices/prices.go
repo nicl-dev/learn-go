@@ -27,7 +27,7 @@ func (job *TaxIncludedPriceJob) Process() error {
 		result[fmt.Sprintf("%.2f", price)] = fmt.Sprintf("%.2f", taxIncludedPrice)
 	}
 
-	fmt.Println(result)
+	filemanager.WriteJSON("output.txt", result)
 	return nil
 }
 
