@@ -28,12 +28,24 @@ func (job *TaxIncludedPriceJob) Process() error {
 	}
 
 	job.TaxIncludedPrices = result
-	filemanager.WriteJSON(fmt.Sprintf("result_%.0f.json", job.TaxRate*100), job)
+	filemanager, err := filemanager.New("prices.txt", "result.json")
+
+	if err != nil {
+		return err
+	}
+
+	filemanager.WriteJSON(filemanager)
 	return nil
 }
 
 func (job *TaxIncludedPriceJob) LoadData() error {
-	lines, err := filemanager.ReadLines("prices.txt")
+	filemanager, err := filemanager.New("prices.txt", "result.txt")
+
+	if err != nil {
+		return err
+	}
+
+	lines, err := filemanager.ReadLines()
 
 	if err != nil {
 		return err
